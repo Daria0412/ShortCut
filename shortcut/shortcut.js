@@ -20,7 +20,6 @@ app.use('/shortcut/response', (req, res) => {
     });
 
     connection.connect(function(err) {
-
         if (err) {
     
             console.error('mysql connection error');
@@ -46,7 +45,7 @@ app.use('/shortcut/response', (req, res) => {
         } else {
             rowdata = JSON.stringify(rows)
             shortdata =  JSON.parse(rowdata)
-            console.log(shortcut)
+            console.log(shortdata)
             shortcut = shortdata[0].short
         }
     })
