@@ -13,7 +13,7 @@ app.use('/shortcut/response', (req, res) => {
 
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
-      host     : 'localhost',
+      host     : '18.217.183.238',
       user     : 'shortcut',
       password : 'mirim2',
       database : 'shortcut'
