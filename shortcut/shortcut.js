@@ -13,7 +13,7 @@ app.use('/shortcut/response', (req, res) => {
 
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
-      host     : 'localhost',
+      host     : '18.217.183.238',
       user     : 'shortcut',
       password : 'mirim2',
       database : 'shortcut'
@@ -39,18 +39,12 @@ app.use('/shortcut/response', (req, res) => {
     let shortcut
 
     connection.query(sql, params, function(err, rows, fields) {
-        if (err) {
-            console.log(err)
-            throw err
-        } else {  
-            console.log(rows)
-            rowdata = JSON.stringify(rows)
-            console.log(rowdata)
-            shortdata =  JSON.parse(rowdata)
-            console.log(shortdata)
-            shortcut = shortdata[0].short
-        }
-    })
+        if(err){
+            console.log(err);
+        } else {
+              console.log(rows[i].short );
+            }
+        })
 
     output = {"prompt": ment + shortcut + " 입니다." }
     nugu.response.output = output
