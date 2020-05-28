@@ -13,13 +13,25 @@ app.use('/shortcut/response', (req, res) => {
 
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
-      host     : '18.217.183.238',
+      host     : '127.0.0.1',
       user     : 'shortcut',
       password : 'mirim2',
       database : 'shortcut'
     });
 
-    connection.connect()
+    connection.connect(function(err) {
+
+        if (err) {
+    
+            console.error('mysql connection error');
+    
+            console.error(err);
+    
+            throw err;
+    
+        }    
+    });
+    
 
     var sql = 'SELECT short FROM shortcut WHERE os = ? AND program = ? AND action = ?;'
     var params = [os, program, action]
