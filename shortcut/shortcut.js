@@ -53,6 +53,7 @@ app.use('/shortcut/response', (req, res) => {
     })
 
     output = {"prompt": ment + shortcut + " 입니다." }
+    console.log(output)
     nugu.response.output = output
     return res.json(nugu.response)
 })
