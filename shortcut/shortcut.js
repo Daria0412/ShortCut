@@ -43,9 +43,7 @@ app.use('/shortcut/response', (req, res) => {
             console.log(err);
         } else {
                 console.log(rows);
-            if (rows!=[]){
                 console.log(rows[0].short);
-                }
             }
         })
 
