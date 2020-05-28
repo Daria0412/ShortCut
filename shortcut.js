@@ -14,9 +14,9 @@ app.use('/shortcut/response', (req, res) => {
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
       host     : 'localhost',
-      user     : 'root',
-      password : '비밀번호',
-      database : 'pie'
+      user     : 'shortcut',
+      password : 'mirim2',
+      database : 'shortcut'
     });
 
     connection.connect()
