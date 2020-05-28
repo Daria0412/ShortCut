@@ -34,28 +34,18 @@ app.use('/shortcut/response', (req, res) => {
 
     var sql = 'SELECT short FROM shortCut WHERE os = ? AND program = ? AND action = ?;'
     var params = [os, program, action]
-    var sql1 = "SELECT short FROM shortCut WHERE os = '"+os+"' AND program = '"+program+"' AND action = '"+action+"';"
     var rowdata
     var shortdata
     let shortcut
 
-    // connection.query(sql, params, function(err, rows, fields) {
-    //     if (err) {
-    //         console.log(err)
-    //         throw err
-    //     } else {
-    //         rowdata = JSON.stringify(rows)
-    //         shortdata =  JSON.parse(rowdata)
-    //         console.log(shortdata)
-    //         shortcut = shortdata[0].short
-    //     }
-    // })
-    connection.query(sql1,function(err, rows, fields) {
+    connection.query(sql, params, function(err, rows, fields) {
         if (err) {
             console.log(err)
             throw err
-        } else {
+        } else {  
+            console.log(rows)
             rowdata = JSON.stringify(rows)
+            console.log(rowdata)
             shortdata =  JSON.parse(rowdata)
             console.log(shortdata)
             shortcut = shortdata[0].short
