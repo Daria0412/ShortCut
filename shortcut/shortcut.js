@@ -13,7 +13,7 @@ app.use('/shortcut/response', (req, res) => {
 
     var mysql      = require('mysql');
     var connection = mysql.createConnection({
-      host     : '127.0.0.1',
+      host     : 'localhost',
       user     : 'shortcut',
       password : 'mirim2',
       database : 'shortcut'
@@ -33,7 +33,7 @@ app.use('/shortcut/response', (req, res) => {
     });
     
 
-    var sql = 'SELECT short FROM shortCut WHERE os = ? AND program = ? AND action = ?;'
+    var sql = 'SELECT short FROM shortcut WHERE os = ? AND program = ? AND action = ?;'
     var params = [os, program, action]
     var rowdata
     var shortdata
@@ -46,6 +46,7 @@ app.use('/shortcut/response', (req, res) => {
         } else {
             rowdata = JSON.stringify(rows)
             shortdata =  JSON.parse(rowdata)
+            console.log(shortcut)
             shortcut = shortdata[0].short
         }
     })
