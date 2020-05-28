@@ -42,7 +42,10 @@ app.use('/shortcut/response', (req, res) => {
         if(err){
             console.log(err);
         } else {
-              console.log(rows[0].short );
+                console.log("none");
+            if (rows!=null){
+                console.log(rows[0].short);
+                }
             }
         })
 
