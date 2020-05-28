@@ -48,6 +48,7 @@ app.use('/shortcut/response', (req, res) => {
             shortdata =  JSON.parse(rowdata)
             console.log(shortdata)
             shortcut = shortdata[0].short
+            console.log(shortcut)
         }
     })
 
