@@ -34,7 +34,7 @@ app.use('/shortcut/response', (req, res) => {
 
     var sql = 'SELECT short FROM shortCut WHERE os = ? AND program = ? AND action = ?;'
     var params = [os, program, action]
-    var sql1 = 'SELECT short FROM shortCut WHERE os = '+os+' AND program = '+program+' AND action = '+action+';'
+    var sql1 = "SELECT short FROM shortCut WHERE os = '"+os+"' AND program = '"+program+"' AND action = '"+action+"';"
     var rowdata
     var shortdata
     let shortcut
